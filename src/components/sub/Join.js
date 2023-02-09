@@ -113,7 +113,7 @@ const Join = () => {
     let value = e.target.value;
     value = value.replace(/(\d{4})(\d{2})(\d{2})/, "$1-$2-$3");
     setVal({ ...val, [name]: value });
-  }
+  };
 
   // 에러 정보 관리 객체
   const [Err, setErr] = useState({});
@@ -176,6 +176,12 @@ const Join = () => {
       errs.address2 = "상세주소를 입력해주세요.";
     }
     return errs;
+  };
+
+  // 데이터 reset 초기화
+  const handleReset = () => {
+    setVal(initVal);
+    setErr({});
   };
 
   // 디버깅용
@@ -441,7 +447,7 @@ const Join = () => {
               <tr>
                 <th colSpan="2">
                   {/* <button type="button">전송</button> */}
-                  <input type="reset" value="RESET" />
+                  <input type="reset" onClick={handleReset} value="RESET" />
                   <input type="submit" value="SUBMIT" />
                 </th>
               </tr>
