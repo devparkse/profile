@@ -102,7 +102,7 @@ const Schedule = () => {
                 className="calender-detail__icon"
                 style={{ width: 20, height: 20 }}
               />
-              방문한날
+              방문한날1
             </div>
             <div className="calender-detail__date-wrap">
               {todoData.map((item, index) => item.title)}
